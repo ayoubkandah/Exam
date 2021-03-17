@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <a href="/MyRecords">My Records</a>
+        <a href="/" >Home </a>
+        <form action="/AllCountries" method="POST">
+        <button id="All">All Countries</button>
+        </form>
+  
+    </header>
+<main>
+<div id="container">
+
+    <% data.forEach(ele => { %>
+        <div class="cards">
+       <p>Country <%=ele.country %> </p>
+       <p>total number of confirmed <%=ele.totalconfirmed %> </p>
+       <p>total deaths <%=ele.totaldeaths %> </p>
+       <p>total recovered <%=ele.totalrecovered %> </p>
+       <p>Date <%=ele.date %> </p>
+       <form action="/saving" method="POST">
+<input type="hidden" name="country" value="<%=ele.country %>">
+<input type="hidden" name="totalconfirmed" value="<%=ele.totalconfirmed %>">
+<input type="hidden" name="totaldeaths" value="<%=ele.totaldeaths %>">
+<input type="hidden" name="totalrecovered" value="<%=ele.totalrecovered %>">
+<input type="hidden" name="date" value="<%=ele.date %>">
+
+        <button>add-to-my-records</button>
+    </form>
+     
+        </div>
+       <% }) %>
+</div>
+
+</main>    
+</body>
+</html>

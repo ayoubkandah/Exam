@@ -1,0 +1,33 @@
+#container{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+flex-basis: 15em;
+width: auto;
+flex-wrap: wrap;
+
+}
+.cards{
+    flex: 0 1 calc(25% -1em);
+    width: 250px;
+    height: 300px;
+    background-color: rgb(233, 229, 224);
+border: 1px solid black;
+margin: 15px;
+
+}
+#All{
+    text-decoration:none ;
+    background-color: white;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    display: inline-block;
+    border: 1px solid black;
+}
+a{
+    display: inline-block;
+    margin: 3px;
+}

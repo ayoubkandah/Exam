@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    
+    <header>
+        <a href="/MyRecords">My Records</a>
+        <a href="/" >Home </a>
+        <form action="/AllCountries" method="POST">
+        <button id="All">All Countries</button>
+        </form>
+  
+    </header>
+<main>
+    <% if (data.rowCount==0) { %>
+        <h1>No AVailable Recorde</h1>
+               <% } %> 
+    <div id="container">
+
+        <% data.rows.forEach(ele => { %>
+         <div class="cards">
+        <p>Country <%=ele.country %> </p>
+        <p>date <%=ele.date %> </p>
+        <form action="/country/<%=ele.id%>  " method="GET">
+        <button>View-Details</button>
+        </form>
+         </div>
+        <% }) %>
+     
+        </div>
+
+</main>
+
+</body>
+</html>
